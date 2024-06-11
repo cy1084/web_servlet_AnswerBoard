@@ -2,8 +2,10 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd" >
 <configuration>
 	<properties resource="properties/db.properties" />
+	
 	<typeAliases>
-		<typeAlias type="com.min.edu.dto.UserDto" alias="UserDto" />
+		<typeAlias type="com.min.edu.dto.AnswerboardDto" alias="AnswerboardDto" />
+		<typeAlias type="com.min.edu.dto.UserInfoDto" alias="UserInfoDto" />
 	</typeAliases>
 
 	<environments default="development">
@@ -19,8 +21,9 @@
 		</environment>
 	</environments>
 
-<!-- 	<mappers> -->
-<!-- 		<mapper resource="sql/User_Statement.xml" /> -->
-<!-- 	</mappers> -->
+	<mappers>
+		<mapper resource="sql/UserInfo_Statement.xml" />
+		<mapper resource="sql/Answerboard_Statement.xml" />
+	</mappers>
 
 </configuration>

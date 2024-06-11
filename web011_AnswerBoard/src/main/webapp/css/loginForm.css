@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+.box {
+	width: 300px;
+	background: #191919;
+	text-align: center;
+	padding: 40px;
+	margin: 100px auto;
+}
+
+.box h1 {
+	color: white;
+	text-transform: uppercase;
+}
+
+.box input[type=text], .box input[type=password] {
+	border: 0px; /* input 태그는 border가 미리 잡혀있음 */
+	background: none;
+	margin: 20px auto;
+	text-align: center;
+	border: 2px solid #3497db;
+	padding: 15px; /*글자가 들어가는 영역*/
+	width: 200px;
+	outline: none;
+	color: white;
+	border-radius: 25px;
+	transition: 0.25s;
+}
+
+/* focus: 클릭을 누르고 들어갔을 때 */
+.box input[type=text]:focus, .box input[type=password]:focus {
+	width: 280px;
+	border-color: orange;
+}
+
+/* .box input[type="submit"]도 가능 */
+.box input[type=submit] {
+	border: 0px; /* input 태그는 border가 미리 잡혀있음 */
+	background: none;
+	display: block;
+	margin: 20px auto;
+	text-align: center;
+	border: 2px solid #3497db;
+	padding: 15px; /*글자가 들어가는 영역*/
+	outline: none;
+	color: white;
+	border-radius: 5px;
+	width: 100px; 
+	transition : 0.25s;
+	cursor: pointer;
+	transition: 0.25s;
+}
+
+.box input[type=submit]:hover {
+	background: yellow;
+}

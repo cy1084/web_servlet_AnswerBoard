@@ -1,0 +1,197 @@
+2024-06-11 12:04:20 DEBUG LogFactory:109 - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+2024-06-11 12:04:20 DEBUG PooledDataSource:373 - PooledDataSource forcefully closed/removed all connections.
+2024-06-11 12:04:20 DEBUG PooledDataSource:373 - PooledDataSource forcefully closed/removed all connections.
+2024-06-11 12:04:20 DEBUG PooledDataSource:373 - PooledDataSource forcefully closed/removed all connections.
+2024-06-11 12:04:20 DEBUG PooledDataSource:373 - PooledDataSource forcefully closed/removed all connections.
+2024-06-11 12:09:36 DEBUG LogFactory:109 - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+2024-06-11 12:09:36 DEBUG PooledDataSource:373 - PooledDataSource forcefully closed/removed all connections.
+2024-06-11 12:09:36 DEBUG PooledDataSource:373 - PooledDataSource forcefully closed/removed all connections.
+2024-06-11 12:09:36 DEBUG PooledDataSource:373 - PooledDataSource forcefully closed/removed all connections.
+2024-06-11 12:09:36 DEBUG PooledDataSource:373 - PooledDataSource forcefully closed/removed all connections.
+2024-06-11 12:09:36 DEBUG JdbcTransaction:143 - Opening JDBC Connection
+2024-06-11 12:09:37 DEBUG PooledDataSource:448 - Created connection 1704491411.
+2024-06-11 12:09:37 DEBUG JdbcTransaction:107 - Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@65987993]
+2024-06-11 12:09:37 DEBUG login:137 - ==>  Preparing: SELECT ID,NAME,AUTH,JOINDATE FROM USERINFO WHERE ID=? AND PASSWORD=?
+2024-06-11 12:09:37 DEBUG login:137 - ==> Parameters: A001(String), A001(String)
+2024-06-11 12:09:37 TRACE login:143 - <==    Columns: ID, NAME, AUTH, JOINDATE
+2024-06-11 12:09:37 TRACE login:143 - <==        Row: A001, 코코볼, U, 2024-06-10 12:46:09
+2024-06-11 12:09:37 DEBUG login:137 - <==      Total: 1
+2024-06-11 12:35:10 DEBUG LogFactory:109 - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+2024-06-11 12:35:10 DEBUG PooledDataSource:373 - PooledDataSource forcefully closed/removed all connections.
+2024-06-11 12:35:10 DEBUG PooledDataSource:373 - PooledDataSource forcefully closed/removed all connections.
+2024-06-11 12:35:10 DEBUG PooledDataSource:373 - PooledDataSource forcefully closed/removed all connections.
+2024-06-11 12:35:10 DEBUG PooledDataSource:373 - PooledDataSource forcefully closed/removed all connections.
+2024-06-11 12:35:10 DEBUG JdbcTransaction:143 - Opening JDBC Connection
+2024-06-11 12:35:11 DEBUG PooledDataSource:448 - Created connection 1823541245.
+2024-06-11 12:35:11 DEBUG JdbcTransaction:107 - Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@6cb107fd]
+2024-06-11 12:35:11 DEBUG login:137 - ==>  Preparing: SELECT ID,NAME,AUTH,JOINDATE FROM USERINFO WHERE ID=? AND PASSWORD=?
+2024-06-11 12:35:11 DEBUG login:137 - ==> Parameters: A001(String), A001(String)
+2024-06-11 12:35:11 TRACE login:143 - <==    Columns: ID, NAME, AUTH, JOINDATE
+2024-06-11 12:35:11 TRACE login:143 - <==        Row: A001, 코코볼, U, 2024-06-10 12:46:09
+2024-06-11 12:35:11 DEBUG login:137 - <==      Total: 1
+2024-06-11 14:31:24 DEBUG LogFactory:109 - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2024-06-11 14:31:24 DEBUG PooledDataSource:373 - PooledDataSource forcefully closed/removed all connections.
+2024-06-11 14:31:24 DEBUG PooledDataSource:373 - PooledDataSource forcefully closed/removed all connections.
+2024-06-11 14:31:24 DEBUG PooledDataSource:373 - PooledDataSource forcefully closed/removed all connections.
+2024-06-11 14:31:24 DEBUG PooledDataSource:373 - PooledDataSource forcefully closed/removed all connections.
+2024-06-11 14:31:24 INFO  AnswerboardDaoImpl:39 - AnswerboardDaoImpl insertBoard
+2024-06-11 14:31:24 INFO  AnswerboardDaoImpl:40 - 전달받은 값: AnswerboardDto(seq=0, id=test, title=test, content=test, ref=0, step=0, depth=0, regdate=null, delflag=null, name=null)
+2024-06-11 14:31:24 DEBUG JdbcTransaction:143 - Opening JDBC Connection
+2024-06-11 14:31:24 DEBUG PooledDataSource:448 - Created connection 508512860.
+2024-06-11 14:31:24 DEBUG insertBoard!selectKey:137 - ==>  Preparing: SELECT ANSWERBOARD_SEQ.NEXTVAL AS SEQ FROM DUAL
+2024-06-11 14:31:24 DEBUG insertBoard!selectKey:137 - ==> Parameters: 
+2024-06-11 14:31:24 TRACE insertBoard!selectKey:143 - <==    Columns: SEQ
+2024-06-11 14:31:24 TRACE insertBoard!selectKey:143 - <==        Row: 18
+2024-06-11 14:31:24 DEBUG insertBoard!selectKey:137 - <==      Total: 1
+2024-06-11 14:31:24 DEBUG insertBoard:137 - ==>  Preparing: INSERT INTO ANSWERBOARD a (SEQ,ID,TITLE,CONTENT,"REF",STEP,"DEPTH",REGDATE,DELFLAG) VALUES(?,?,?,? ,(SELECT NVL(MAX(REF),0)+1 FROM ANSWERBOARD a),0,0,SYSDATE,'Y')
+2024-06-11 14:31:24 DEBUG insertBoard:137 - ==> Parameters: 18(Integer), test(String), test(String), test(String)
+2024-06-11 14:32:50 DEBUG LogFactory:109 - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2024-06-11 14:32:50 DEBUG PooledDataSource:373 - PooledDataSource forcefully closed/removed all connections.
+2024-06-11 14:32:50 DEBUG PooledDataSource:373 - PooledDataSource forcefully closed/removed all connections.
+2024-06-11 14:32:50 DEBUG PooledDataSource:373 - PooledDataSource forcefully closed/removed all connections.
+2024-06-11 14:32:50 DEBUG PooledDataSource:373 - PooledDataSource forcefully closed/removed all connections.
+2024-06-11 14:32:50 INFO  AnswerboardDaoImpl:39 - AnswerboardDaoImpl insertBoard
+2024-06-11 14:32:50 INFO  AnswerboardDaoImpl:40 - 전달받은 값: AnswerboardDto(seq=0, id=A001, title=test, content=test, ref=0, step=0, depth=0, regdate=null, delflag=null, name=null)
+2024-06-11 14:32:50 DEBUG JdbcTransaction:143 - Opening JDBC Connection
+2024-06-11 14:32:50 DEBUG PooledDataSource:448 - Created connection 508512860.
+2024-06-11 14:32:50 DEBUG insertBoard!selectKey:137 - ==>  Preparing: SELECT ANSWERBOARD_SEQ.NEXTVAL AS SEQ FROM DUAL
+2024-06-11 14:32:50 DEBUG insertBoard!selectKey:137 - ==> Parameters: 
+2024-06-11 14:32:50 TRACE insertBoard!selectKey:143 - <==    Columns: SEQ
+2024-06-11 14:32:50 TRACE insertBoard!selectKey:143 - <==        Row: 19
+2024-06-11 14:32:50 DEBUG insertBoard!selectKey:137 - <==      Total: 1
+2024-06-11 14:32:50 DEBUG insertBoard:137 - ==>  Preparing: INSERT INTO ANSWERBOARD a (SEQ,ID,TITLE,CONTENT,"REF",STEP,"DEPTH",REGDATE,DELFLAG) VALUES(?,?,?,? ,(SELECT NVL(MAX(REF),0)+1 FROM ANSWERBOARD a),0,0,SYSDATE,'Y')
+2024-06-11 14:32:50 DEBUG insertBoard:137 - ==> Parameters: 19(Integer), A001(String), test(String), test(String)
+2024-06-11 14:32:50 DEBUG insertBoard:137 - <==    Updates: 1
+2024-06-11 14:32:50 INFO  AnswerboardDaoImpl:22 - AnswerboardDaoImpl selectAllBoard
+2024-06-11 14:32:50 DEBUG JdbcTransaction:143 - Opening JDBC Connection
+2024-06-11 14:32:50 DEBUG PooledDataSource:448 - Created connection 1662592920.
+2024-06-11 14:32:50 DEBUG JdbcTransaction:107 - Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@63192798]
+2024-06-11 14:32:50 DEBUG selectAllBoard:137 - ==>  Preparing: SELECT SEQ,ID,TITLE, "REF",STEP,"DEPTH",REGDATE,DELFLAG,NAME FROM ANSWERBOARD a JOIN USERINFO u USING(ID) ORDER BY REF DESC, STEP
+2024-06-11 14:32:50 DEBUG selectAllBoard:137 - ==> Parameters: 
+2024-06-11 14:32:50 TRACE selectAllBoard:143 - <==    Columns: SEQ, ID, TITLE, REF, STEP, DEPTH, REGDATE, DELFLAG, NAME
+2024-06-11 14:32:50 TRACE selectAllBoard:143 - <==        Row: 19, A001, test, 4, 0, 0, 2024-06-11 14:32:50, Y, 코코볼
+2024-06-11 14:32:50 TRACE selectAllBoard:143 - <==        Row: 12, A001, ROOT글 삭제글, 3, 0, 0, 2024-06-10 14:55:04, Y, 코코볼
+2024-06-11 14:32:50 TRACE selectAllBoard:143 - <==        Row: 11, A002, ROOT글 두번째, 2, 0, 0, 2024-06-10 14:54:17, N, 햇빛
+2024-06-11 14:32:50 TRACE selectAllBoard:143 - <==        Row: 17, A001, 답글4, 2, 1, 1, 2024-06-10 15:09:29, N, 코코볼
+2024-06-11 14:32:50 TRACE selectAllBoard:143 - <==        Row: 16, A001, 답글3, 2, 1, 1, 2024-06-10 15:08:46, N, 코코볼
+2024-06-11 14:32:50 TRACE selectAllBoard:143 - <==        Row: 13, A001, 답글1, 2, 2, 1, 2024-06-10 14:58:47, N, 코코볼
+2024-06-11 14:32:50 TRACE selectAllBoard:143 - <==        Row: 15, A001, 답글답글, 2, 3, 2, 2024-06-10 15:01:56, N, 코코볼
+2024-06-11 14:32:50 TRACE selectAllBoard:143 - <==        Row: 10, A001, ROOT글 첫번째, 1, 0, 0, 2024-06-10 14:53:59, Y, 코코볼
+2024-06-11 14:32:50 DEBUG selectAllBoard:137 - <==      Total: 8
+2024-06-11 14:32:50 INFO  AnswerboardDaoImpl:30 - AnswerboardDaoImpl selectDetailBoard
+2024-06-11 14:32:50 INFO  AnswerboardDaoImpl:31 - 전달받은 값: 19
+2024-06-11 14:32:50 DEBUG JdbcTransaction:143 - Opening JDBC Connection
+2024-06-11 14:32:50 DEBUG PooledDataSource:448 - Created connection 1705665942.
+2024-06-11 14:32:50 DEBUG JdbcTransaction:107 - Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@65aa6596]
+2024-06-11 14:32:50 DEBUG selectDetailBoard:137 - ==>  Preparing: SELECT SEQ,ID,TITLE,CONTENT,TO_CHAR(REGDATE,'YYYY.mm.DD.') AS REGDATE FROM ANSWERBOARD a WHERE SEQ=?
+2024-06-11 14:32:50 DEBUG selectDetailBoard:137 - ==> Parameters: 19(String)
+2024-06-11 14:32:50 TRACE selectDetailBoard:143 - <==    Columns: SEQ, ID, TITLE, CONTENT, REGDATE
+2024-06-11 14:32:50 TRACE selectDetailBoard:143 - <==        Row: 19, A001, test, test, 2024.06.11.
+2024-06-11 14:32:50 DEBUG selectDetailBoard:137 - <==      Total: 1
+2024-06-11 14:32:50 INFO  AnswerboardDaoImpl:49 - AnswerboardDaoImpl modifyBoard
+2024-06-11 14:32:50 INFO  AnswerboardDaoImpl:50 - 전달받은 값: null
+2024-06-11 14:32:50 DEBUG JdbcTransaction:143 - Opening JDBC Connection
+2024-06-11 14:32:50 DEBUG PooledDataSource:448 - Created connection 484841769.
+2024-06-11 14:32:50 DEBUG modifyBoard:137 - ==>  Preparing: UPDATE ANSWERBOARD SET CONTENT=? WHERE SEQ=?
+2024-06-11 14:34:29 DEBUG LogFactory:109 - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2024-06-11 14:34:29 DEBUG PooledDataSource:373 - PooledDataSource forcefully closed/removed all connections.
+2024-06-11 14:34:29 DEBUG PooledDataSource:373 - PooledDataSource forcefully closed/removed all connections.
+2024-06-11 14:34:29 DEBUG PooledDataSource:373 - PooledDataSource forcefully closed/removed all connections.
+2024-06-11 14:34:29 DEBUG PooledDataSource:373 - PooledDataSource forcefully closed/removed all connections.
+2024-06-11 14:34:29 INFO  AnswerboardDaoImpl:39 - AnswerboardDaoImpl insertBoard
+2024-06-11 14:34:29 INFO  AnswerboardDaoImpl:40 - 전달받은 값: AnswerboardDto(seq=0, id=A001, title=test, content=test, ref=0, step=0, depth=0, regdate=null, delflag=null, name=null)
+2024-06-11 14:34:29 DEBUG JdbcTransaction:143 - Opening JDBC Connection
+2024-06-11 14:34:30 DEBUG PooledDataSource:448 - Created connection 508512860.
+2024-06-11 14:34:30 DEBUG insertBoard!selectKey:137 - ==>  Preparing: SELECT ANSWERBOARD_SEQ.NEXTVAL AS SEQ FROM DUAL
+2024-06-11 14:34:30 DEBUG insertBoard!selectKey:137 - ==> Parameters: 
+2024-06-11 14:34:30 TRACE insertBoard!selectKey:143 - <==    Columns: SEQ
+2024-06-11 14:34:30 TRACE insertBoard!selectKey:143 - <==        Row: 20
+2024-06-11 14:34:30 DEBUG insertBoard!selectKey:137 - <==      Total: 1
+2024-06-11 14:34:30 DEBUG insertBoard:137 - ==>  Preparing: INSERT INTO ANSWERBOARD a (SEQ,ID,TITLE,CONTENT,"REF",STEP,"DEPTH",REGDATE,DELFLAG) VALUES(?,?,?,? ,(SELECT NVL(MAX(REF),0)+1 FROM ANSWERBOARD a),0,0,SYSDATE,'Y')
+2024-06-11 14:34:30 DEBUG insertBoard:137 - ==> Parameters: 20(Integer), A001(String), test(String), test(String)
+2024-06-11 14:34:30 DEBUG insertBoard:137 - <==    Updates: 1
+2024-06-11 14:34:30 INFO  AnswerboardDaoImpl:22 - AnswerboardDaoImpl selectAllBoard
+2024-06-11 14:34:30 DEBUG JdbcTransaction:143 - Opening JDBC Connection
+2024-06-11 14:34:30 DEBUG PooledDataSource:448 - Created connection 1692375649.
+2024-06-11 14:34:30 DEBUG JdbcTransaction:107 - Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@64df9a61]
+2024-06-11 14:34:30 DEBUG selectAllBoard:137 - ==>  Preparing: SELECT SEQ,ID,TITLE, "REF",STEP,"DEPTH",REGDATE,DELFLAG,NAME FROM ANSWERBOARD a JOIN USERINFO u USING(ID) ORDER BY REF DESC, STEP
+2024-06-11 14:34:30 DEBUG selectAllBoard:137 - ==> Parameters: 
+2024-06-11 14:34:30 TRACE selectAllBoard:143 - <==    Columns: SEQ, ID, TITLE, REF, STEP, DEPTH, REGDATE, DELFLAG, NAME
+2024-06-11 14:34:30 TRACE selectAllBoard:143 - <==        Row: 20, A001, test, 5, 0, 0, 2024-06-11 14:34:30, Y, 코코볼
+2024-06-11 14:34:30 TRACE selectAllBoard:143 - <==        Row: 19, A001, test, 4, 0, 0, 2024-06-11 14:32:50, Y, 코코볼
+2024-06-11 14:34:30 TRACE selectAllBoard:143 - <==        Row: 12, A001, ROOT글 삭제글, 3, 0, 0, 2024-06-10 14:55:04, Y, 코코볼
+2024-06-11 14:34:30 TRACE selectAllBoard:143 - <==        Row: 11, A002, ROOT글 두번째, 2, 0, 0, 2024-06-10 14:54:17, N, 햇빛
+2024-06-11 14:34:30 TRACE selectAllBoard:143 - <==        Row: 17, A001, 답글4, 2, 1, 1, 2024-06-10 15:09:29, N, 코코볼
+2024-06-11 14:34:30 TRACE selectAllBoard:143 - <==        Row: 16, A001, 답글3, 2, 1, 1, 2024-06-10 15:08:46, N, 코코볼
+2024-06-11 14:34:30 TRACE selectAllBoard:143 - <==        Row: 13, A001, 답글1, 2, 2, 1, 2024-06-10 14:58:47, N, 코코볼
+2024-06-11 14:34:30 TRACE selectAllBoard:143 - <==        Row: 15, A001, 답글답글, 2, 3, 2, 2024-06-10 15:01:56, N, 코코볼
+2024-06-11 14:34:30 TRACE selectAllBoard:143 - <==        Row: 10, A001, ROOT글 첫번째, 1, 0, 0, 2024-06-10 14:53:59, Y, 코코볼
+2024-06-11 14:34:30 DEBUG selectAllBoard:137 - <==      Total: 9
+2024-06-11 14:34:30 INFO  AnswerboardDaoImpl:30 - AnswerboardDaoImpl selectDetailBoard
+2024-06-11 14:34:30 INFO  AnswerboardDaoImpl:31 - 전달받은 값: 20
+2024-06-11 14:34:30 DEBUG JdbcTransaction:143 - Opening JDBC Connection
+2024-06-11 14:34:30 DEBUG PooledDataSource:448 - Created connection 1961129028.
+2024-06-11 14:34:30 DEBUG JdbcTransaction:107 - Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@74e47444]
+2024-06-11 14:34:30 DEBUG selectDetailBoard:137 - ==>  Preparing: SELECT SEQ,ID,TITLE,CONTENT,TO_CHAR(REGDATE,'YYYY.mm.DD.') AS REGDATE FROM ANSWERBOARD a WHERE SEQ=?
+2024-06-11 14:34:30 DEBUG selectDetailBoard:137 - ==> Parameters: 20(String)
+2024-06-11 14:34:30 TRACE selectDetailBoard:143 - <==    Columns: SEQ, ID, TITLE, CONTENT, REGDATE
+2024-06-11 14:34:30 TRACE selectDetailBoard:143 - <==        Row: 20, A001, test, test, 2024.06.11.
+2024-06-11 14:34:30 DEBUG selectDetailBoard:137 - <==      Total: 1
+2024-06-11 14:34:30 INFO  AnswerboardDaoImpl:49 - AnswerboardDaoImpl modifyBoard
+2024-06-11 14:34:30 INFO  AnswerboardDaoImpl:50 - 전달받은 값: {seq=20, content=  }
+2024-06-11 14:34:30 DEBUG JdbcTransaction:143 - Opening JDBC Connection
+2024-06-11 14:34:30 DEBUG PooledDataSource:448 - Created connection 407997647.
+2024-06-11 14:34:30 DEBUG modifyBoard:137 - ==>  Preparing: UPDATE ANSWERBOARD SET CONTENT=? WHERE SEQ=?
+2024-06-11 14:34:30 DEBUG modifyBoard:137 - ==> Parameters:   (String), 20(String)
+2024-06-11 14:34:30 DEBUG modifyBoard:137 - <==    Updates: 1
+2024-06-11 14:34:30 INFO  AnswerboardDaoImpl:59 - AnswerboardDaoImpl deleteBoard
+2024-06-11 14:34:30 INFO  AnswerboardDaoImpl:60 - 전달받은 값: 20
+2024-06-11 14:34:30 DEBUG JdbcTransaction:143 - Opening JDBC Connection
+2024-06-11 14:34:30 DEBUG PooledDataSource:448 - Created connection 106557175.
+2024-06-11 14:34:30 DEBUG deleteBoard:137 - ==>  Preparing: DELETE FROM ANSWERBOARD WHERE SEQ=?
+2024-06-11 14:34:30 DEBUG deleteBoard:137 - ==> Parameters: 20(String)
+2024-06-11 14:34:30 DEBUG deleteBoard:137 - <==    Updates: 1
+2024-06-11 15:02:45 DEBUG LogFactory:109 - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2024-06-11 15:02:45 DEBUG PooledDataSource:373 - PooledDataSource forcefully closed/removed all connections.
+2024-06-11 15:02:45 DEBUG PooledDataSource:373 - PooledDataSource forcefully closed/removed all connections.
+2024-06-11 15:02:45 DEBUG PooledDataSource:373 - PooledDataSource forcefully closed/removed all connections.
+2024-06-11 15:02:45 DEBUG PooledDataSource:373 - PooledDataSource forcefully closed/removed all connections.
+2024-06-11 15:02:46 INFO  AnswerboardDaoImpl:69 - AnswerboardDaoImpl multiDeleteBoard
+2024-06-11 15:02:46 INFO  AnswerboardDaoImpl:70 - 전달받은 값: [13, 15]
+2024-06-11 15:02:46 DEBUG JdbcTransaction:143 - Opening JDBC Connection
+2024-06-11 15:02:46 DEBUG PooledDataSource:448 - Created connection 271095942.
+2024-06-11 15:02:46 DEBUG multiDeleteBoard:137 - ==>  Preparing: UPDATE ANSWERBOARD SET DELFLAG ='Y' WHERE SEQ IN ( ? , ? )
+2024-06-11 15:02:46 DEBUG multiDeleteBoard:137 - ==> Parameters: 13(String), 15(String)
+2024-06-11 15:02:46 DEBUG multiDeleteBoard:137 - <==    Updates: 2
+2024-06-11 15:12:37 DEBUG LogFactory:109 - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2024-06-11 15:12:37 DEBUG PooledDataSource:373 - PooledDataSource forcefully closed/removed all connections.
+2024-06-11 15:12:37 DEBUG PooledDataSource:373 - PooledDataSource forcefully closed/removed all connections.
+2024-06-11 15:12:37 DEBUG PooledDataSource:373 - PooledDataSource forcefully closed/removed all connections.
+2024-06-11 15:12:37 DEBUG PooledDataSource:373 - PooledDataSource forcefully closed/removed all connections.
+2024-06-11 15:12:37 INFO  AnswerboardDaoImpl:80 - AnswerboardDaoImpl reply
+2024-06-11 15:12:37 INFO  AnswerboardDaoImpl:81 - 전달받은 값: AnswerboardDto(seq=12, id=A001, title=답글테스트, content=답글테스트내용, ref=0, step=0, depth=0, regdate=null, delflag=null, name=null)
+2024-06-11 15:12:37 DEBUG JdbcTransaction:143 - Opening JDBC Connection
+2024-06-11 15:12:38 DEBUG PooledDataSource:448 - Created connection 258535644.
+2024-06-11 15:12:38 DEBUG JdbcTransaction:107 - Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@f68f0dc]
+2024-06-11 15:12:38 DEBUG replyUpdate:137 - ==>  Preparing: UPDATE ANSWERBOARD SET STEP=STEP+1 WHERE REF=(SELECT REF FROM ANSWERBOARD a WHERE SEQ=?) AND STEP>(SELECT STEP FROM ANSWERBOARD a WHERE SEQ=?)
+2024-06-11 15:12:38 DEBUG replyUpdate:137 - ==> Parameters: 12(Integer), 12(Integer)
+2024-06-11 15:12:38 DEBUG replyUpdate:137 - <==    Updates: 0
+2024-06-11 15:12:38 DEBUG replyInsert:137 - ==>  Preparing: INSERT INTO ANSWERBOARD (SEQ, ID, TITLE, CONTENT, "REF", STEP, "DEPTH", REGDATE, DELFLAG) VALUES(ANSWERBOARD_SEQ.NEXTVAL, ?, ?, ?, (SELECT REF FROM ANSWERBOARD a WHERE SEQ=?),(SELECT STEP FROM ANSWERBOARD a2 WHERE SEQ=?)+1,(SELECT "DEPTH" FROM ANSWERBOARD a2 WHERE SEQ=?)+1, SYSDATE,'N')
+2024-06-11 15:12:38 DEBUG replyInsert:137 - ==> Parameters: A001(String), 답글테스트(String), 답글테스트내용(String), 12(Integer), 12(Integer), 12(Integer)
+2024-06-11 15:12:38 DEBUG replyInsert:137 - <==    Updates: 1
+2024-06-11 15:13:37 DEBUG LogFactory:109 - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2024-06-11 15:13:37 DEBUG PooledDataSource:373 - PooledDataSource forcefully closed/removed all connections.
+2024-06-11 15:13:37 DEBUG PooledDataSource:373 - PooledDataSource forcefully closed/removed all connections.
+2024-06-11 15:13:37 DEBUG PooledDataSource:373 - PooledDataSource forcefully closed/removed all connections.
+2024-06-11 15:13:37 DEBUG PooledDataSource:373 - PooledDataSource forcefully closed/removed all connections.
+2024-06-11 15:13:38 INFO  AnswerboardDaoImpl:80 - AnswerboardDaoImpl reply
+2024-06-11 15:13:38 INFO  AnswerboardDaoImpl:81 - 전달받은 값: AnswerboardDto(seq=10, id=A001, title=답글테스트, content=답글테스트내용, ref=0, step=0, depth=0, regdate=null, delflag=null, name=null)
+2024-06-11 15:13:38 DEBUG JdbcTransaction:143 - Opening JDBC Connection
+2024-06-11 15:13:38 DEBUG PooledDataSource:448 - Created connection 258535644.
+2024-06-11 15:13:38 DEBUG JdbcTransaction:107 - Setting autocommit to false on JDBC Connection [oracle.jdbc.driver.T4CConnection@f68f0dc]
+2024-06-11 15:13:38 DEBUG replyUpdate:137 - ==>  Preparing: UPDATE ANSWERBOARD SET STEP=STEP+1 WHERE REF=(SELECT REF FROM ANSWERBOARD a WHERE SEQ=?) AND STEP>(SELECT STEP FROM ANSWERBOARD a WHERE SEQ=?)
+2024-06-11 15:13:38 DEBUG replyUpdate:137 - ==> Parameters: 10(Integer), 10(Integer)
+2024-06-11 15:13:38 DEBUG replyUpdate:137 - <==    Updates: 0
+2024-06-11 15:13:38 DEBUG replyInsert:137 - ==>  Preparing: INSERT INTO ANSWERBOARD (SEQ, ID, TITLE, CONTENT, "REF", STEP, "DEPTH", REGDATE, DELFLAG) VALUES(ANSWERBOARD_SEQ.NEXTVAL, ?, ?, ?, (SELECT REF FROM ANSWERBOARD a WHERE SEQ=?),(SELECT STEP FROM ANSWERBOARD a2 WHERE SEQ=?)+1,(SELECT "DEPTH" FROM ANSWERBOARD a2 WHERE SEQ=?)+1, SYSDATE,'N')
+2024-06-11 15:13:38 DEBUG replyInsert:137 - ==> Parameters: A001(String), 답글테스트(String), 답글테스트내용(String), 10(Integer), 10(Integer), 10(Integer)
+2024-06-11 15:13:38 DEBUG replyInsert:137 - <==    Updates: 1

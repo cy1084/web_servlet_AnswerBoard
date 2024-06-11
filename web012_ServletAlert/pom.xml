@@ -16,6 +16,7 @@
 	</properties>
 
 	<dependencies>
+		<!--facet에서 톰캣 연결 대신!-->
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
