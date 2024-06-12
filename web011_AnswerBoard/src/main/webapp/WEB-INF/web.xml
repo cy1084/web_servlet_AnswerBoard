@@ -14,7 +14,7 @@
 		<servlet-name>login</servlet-name>
 		<url-pattern>/loginServlet.do</url-pattern>
 	</servlet-mapping>
-	
+
 	<!-- 게시글 전체보기 화면 -->
 	<servlet>
 		<servlet-name>BoardList</servlet-name>
@@ -26,7 +26,37 @@
 	</servlet-mapping>
 
 
+	<!-- 다중삭제 및 단일삭제 deflag변경 -->
+	<servlet>
+		<servlet-name>MultiDelete</servlet-name>
+		<servlet-class>com.min.edu.controller.MultiDeleteServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MultiDelete</servlet-name>
+		<url-pattern>/multiDelete.do</url-pattern>
+	</servlet-mapping>
 
+	<!-- 새글작성(ROOT) -->
+	<servlet>
+		<servlet-name>WriteBoard</servlet-name>
+		<servlet-class>com.min.edu.controller.WriteBoardServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>WriteBoard</servlet-name>
+		<url-pattern>/writeBoard.do</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 상세글 조회 -->
+	<servlet>
+		<servlet-name>DetailBoard</servlet-name>
+		<servlet-class>com.min.edu.controller.DetailBoardServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DetailBoard</servlet-name>
+		<url-pattern>/detailBoard.do</url-pattern>
+	</servlet-mapping>
+	
+	
 	<!-- 0611 11시 20분~ 다시듣기 -->
 	<filter>
 		<filter-name>AccessFilter</filter-name>

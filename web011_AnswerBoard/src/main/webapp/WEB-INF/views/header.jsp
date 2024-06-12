@@ -5,17 +5,15 @@
 <html>
 <head>
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- css 파일 -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- CSS파일 -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<link
-	href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.8/dist/sweetalert2.min.css"
-	rel="stylesheet">
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.8/dist/sweetalert2.min.css">
 
-
-<!-- js 파일 -->
+<!-- JS파일 -->
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script
@@ -50,13 +48,16 @@ footer {
 }
 </style>
 
+
+
 </head>
 <body>
 	<%
 	UserInfoDto loginDto = (UserInfoDto) session.getAttribute("loginDto");
 	%>
+
 	<header>
-		<div style="padding: 30px;">
+		<div style="padding: 30px">
 			<h3 style="display: inline;">
 				<a href="./boardList.do">게시판 구현</a>
 			</h3>
@@ -65,8 +66,7 @@ footer {
 			if (loginDto == null) {
 			%>
 			<div style="display: inline; float: right;">
-				<button class="btn btn-info"
-					onclick="location.href='./loginServlet.do'">Sign In</button>
+				<button onclick="location.href='./loginServlet.do'">Sign In</button>
 			</div>
 			<div>
 				<button class="btn btn-primary">Sign Up</button>
@@ -75,45 +75,49 @@ footer {
 			} else {
 			%>
 			<div style="display: inline; float: right;">
-				<span style="color: white;"> 
-					아이디:<%=loginDto.getId()%>(<%=loginDto.getAuth().equalsIgnoreCase("A") ? "관리자" : "사용자"%>)
+				<span style="color: white;"> 아이디: <%=loginDto.getId()%>(<%=loginDto.getAuth().equalsIgnoreCase("A") ? "관리자" : "사용자"%>);
 
 				</span>
 				<button class="btn btn-warn">MyPage</button>
 				<button class="btn btn-danger"
-					onclick="location.href='./loginServlet.do'">Logout</button>
+					onclick="location.href='./loginServlet.do'">LogOut</button>
 			</div>
 			<%
 			}
 			%>
+
 		</div>
 
 
 		<nav class="navbar navbar-inverse">
 			<div class="container-fluid">
 				<div class="navbar-header">
-					<a class="navbar-brand" href="#">WebSiteName</a>
+					<button type="button" class="navbar-toggle" data-toggle="collapse"
+						data-target="#myNavbar">
+						<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+							class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="./">WebSiteName</a>
 				</div>
-				<ul class="nav navbar-nav">
-					<li class="active"><a href="#">Home</a></li>
-					<li class="dropdown"><a class="dropdown-toggle"
-						data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="#">Page 1-1</a></li>
-							<li><a href="#">Page 1-2</a></li>
-							<li><a href="#">Page 1-3</a></li>
-						</ul></li>
-					<li><a href="#">Page 2</a></li>
-					<li><a href="#">Page 3</a></li>
-				</ul>
+				<div class="collapse navbar-collapse" id="myNavbar">
+					<ul class="nav navbar-nav">
+						<li><a href="#">Home</a></li>
+						<li class="dropdown"><a class="dropdown-toggle"
+							data-toggle="dropdown" href="#">회원관리<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">회원정보조회</a></li>
+								<li><a href="#">신고회원</a></li>
+								<!--             <li><a href="#">Page 1-3</a></li> -->
+							</ul></li>
+						<li><a href="#">게시판</a></li>
+						<li><a href="#">글작성</a></li>
+					</ul>
+
+				</div>
 			</div>
 		</nav>
 
 
-
 	</header>
-	<div>
-		로그인된 정보:
-		<%=loginDto%></div>
 </body>
 </html>

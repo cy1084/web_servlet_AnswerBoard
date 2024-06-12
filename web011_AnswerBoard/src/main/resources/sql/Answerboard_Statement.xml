@@ -45,17 +45,34 @@
 		</foreach>
 	</delete>
 
-	<!-- 글 입력 insertBoard -->
+	<!--  글 입력 insertBoard -->
+	
+	<!-- <insert id="insertBoard" parameterType="AnswerboardDto"> -->
+	<!-- <selectKey keyProperty="seq" resultType="java.lang.Integer" -->
+	<!-- order="BEFORE"> -->
+	<!-- SELECT ANSWERBOARD_SEQ.NEXTVAL AS SEQ FROM DUAL -->
+	<!-- </selectKey> -->
+	<!-- INSERT INTO ANSWERBOARD a -->
+	<!-- (SEQ,ID,TITLE,CONTENT,"REF",STEP,"DEPTH",REGDATE,DELFLAG) -->
+	<!-- VALUES(#{seq},#{id},#{title},#{content} -->
+	<!-- ,(SELECT NVL(MAX(REF),0)+1 FROM -->
+	<!-- ANSWERBOARD a),0,0,SYSDATE,'N') -->
+	<!-- </insert> -->
+
+	<!-- 글입력 insertBoard -->
 	<insert id="insertBoard" parameterType="AnswerboardDto">
 		<selectKey keyProperty="seq" resultType="java.lang.Integer"
 			order="BEFORE">
 			SELECT ANSWERBOARD_SEQ.NEXTVAL AS SEQ FROM DUAL
 		</selectKey>
-		INSERT INTO ANSWERBOARD a
-		(SEQ,ID,TITLE,CONTENT,"REF",STEP,"DEPTH",REGDATE,DELFLAG)
-		VALUES(#{seq},#{id},#{title},#{content}
-		,(SELECT NVL(MAX(REF),0)+1 FROM
-		ANSWERBOARD a),0,0,SYSDATE,'Y')
+		INSERT INTO ANSWERBOARD
+		(SEQ, ID, TITLE,
+		CONTENT, "REF", STEP,
+		"DEPTH", REGDATE, DELFLAG)
+		VALUES(#{seq}, #{id}, #{title},
+		#{content}, (SELECT NVL(MAX(REF),0)+1 FROM ANSWERBOARD a), 0,
+		0, SYSDATE, 'N')
+
 	</insert>
 
 	<!-- 답글 업데이트 replyUpdate -->
