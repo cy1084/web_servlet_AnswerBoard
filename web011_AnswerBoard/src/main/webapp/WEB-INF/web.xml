@@ -36,6 +36,19 @@
 		<url-pattern>/multiDelete.do</url-pattern>
 	</servlet-mapping>
 
+
+	<!-- 관리자 DB 삭제 -->
+	<servlet>
+		<servlet-name>RealDelete</servlet-name>
+		<servlet-class>com.min.edu.controller.RealDeleteServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RealDelete</servlet-name>
+		<url-pattern>/realDelete.do</url-pattern>
+	</servlet-mapping>
+
+
+
 	<!-- 새글작성(ROOT) -->
 	<servlet>
 		<servlet-name>WriteBoard</servlet-name>
@@ -45,7 +58,8 @@
 		<servlet-name>WriteBoard</servlet-name>
 		<url-pattern>/writeBoard.do</url-pattern>
 	</servlet-mapping>
-	
+
+
 	<!-- 상세글 조회 -->
 	<servlet>
 		<servlet-name>DetailBoard</servlet-name>
@@ -55,8 +69,30 @@
 		<servlet-name>DetailBoard</servlet-name>
 		<url-pattern>/detailBoard.do</url-pattern>
 	</servlet-mapping>
+
+
+	<!-- 내글 수정 -->
+	<servlet>
+		<servlet-name>ModifyBoard</servlet-name>
+		<servlet-class>com.min.edu.controller.ModifyBoardServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ModifyBoard</servlet-name>
+		<url-pattern>/modifyBoard.do</url-pattern>
+	</servlet-mapping>
 	
 	
+	<!-- 답글 입력 -->
+	<servlet>
+		<servlet-name>ReplyBoard</servlet-name>
+		<servlet-class>com.min.edu.controller.ReplyBoardServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ReplyBoard</servlet-name>
+		<url-pattern>/replyBoard.do</url-pattern>
+	</servlet-mapping>
+
+
 	<!-- 0611 11시 20분~ 다시듣기 -->
 	<filter>
 		<filter-name>AccessFilter</filter-name>

@@ -133,13 +133,13 @@ function chSubmit(event) {
 		Swal.fire({
 			title: "다중 삭제를 진행하시겠습니까?",
 			showDenyButton: true,
-//			showCancelButton: true,
+			//			showCancelButton: true,
 			confirmButtonText: "삭제",
 			denyButtonText: `취소`
 		}).then((result) => {
 			/* Read more about isConfirmed, isDenied below */
 			if (result.isConfirmed) {
-				Swal.fire("삭제 완료!", "", "success").then(()=>{
+				Swal.fire("삭제 완료!", "", "success").then(() => {
 					submitForm(); //삭제 완료되면 화면 넘어감
 				});
 			} else if (result.isDenied) {
@@ -157,4 +157,49 @@ function chSubmit(event) {
 
 function submitForm() {
 	document.forms[0].submit();
+}
+
+
+//boardDetail.jsp
+//1) 관리자 삭제
+function del(event) {
+	event.preventDefault();
+	console.log();
+
+	var frm = document.forms[0];
+	var con = confirm("선택한 글이 삭제됩니다");
+	if (con) {
+		frm.action = "./realDelete.do";
+		frm.method = "post";
+		frm.submit();
+	} else {
+		alert("삭제가 취소되었습니다");
+	}
+
+}
+
+//2) 사용자 수정
+//javascript에서 화면에 있는 값을 주소에 queryString으로 만들어서 요청
+function modify(event) {
+	event.preventDefault();
+
+	var frm = document.forms[0];
+	
+	var seq=document.querySelector("input[name=seq]");
+	
+	frm.action = "./modifyBoard.do?seq="+seq;
+	frm.method = "get";
+	frm.submit();
+}
+
+
+//3) 회원 답글 입력
+function reply(event){
+	event.preventDefault();
+	var frm = document.forms[0];
+	var seq=document.querySelector("input[name=seq]");
+	
+	frm.action = "./replyBoard.do?seq="+seq;
+	//frm.method = "get"; //default가 get
+	frm.submit();
 }

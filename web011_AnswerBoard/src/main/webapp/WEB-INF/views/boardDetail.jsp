@@ -57,7 +57,7 @@
 						if(loginDto.getId().equals(dto.getId())){
 							%>
 								<div class="btn-group">
-									<button class="btn btn-info" onclick="modify()">내글수정</button>
+									<button class="btn btn-info" onclick="modify(event)">내글수정</button>
 								</div>
 							<% 
 						}
@@ -66,7 +66,7 @@
 						%>
 						
 						<div class="btn-group">
-							<button type="button" class="btn btn-primary" onclick="reply()">답글</button>
+							<button type="button" class="btn btn-primary" onclick="reply(event)">답글</button>
 						</div>
 					</form>
 				</td>
