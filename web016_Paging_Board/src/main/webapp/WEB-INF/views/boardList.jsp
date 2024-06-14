@@ -49,14 +49,17 @@
 					</li>
 				</c:forEach>
 				
-				<c:if test="${page.stagePage+page.countPage>page.totalPage}">
+				<fmt:parseNumber var="num1" integerOnly="true" value="${(page.totalPage-1) / page.countPage}" />
+				<fmt:parseNumber var="num2" integerOnly="true" value="${(page.page-1) / page.countPage}" />
+				
+				<c:if test="${num1>num2}">
 					<li>
-						<a>&gt;</a>
+						<a href="./boardPage.do?page=${page.stagePage+page.countPage}">&gt;</a>
 					</li>
 				</c:if>
 				<c:if test="${page.endPage<page.totalPage}">
 					<li>
-						<a>&gt;&gt;</a>
+						<a href="./boardPage.do?page=${page.totalPage}">&gt;&gt;</a>
 					</li>
 				</c:if>
 				
