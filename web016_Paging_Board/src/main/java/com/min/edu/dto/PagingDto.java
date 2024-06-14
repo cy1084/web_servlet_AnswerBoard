@@ -97,7 +97,7 @@ public class PagingDto {
 		if (endPageResult > totalPage) {
 			endPageResult = totalPage;
 		}
-		this.endPage = totalPage;
+		this.endPage = endPageResult;
 	}
 
 	public int getTotalCount() {
