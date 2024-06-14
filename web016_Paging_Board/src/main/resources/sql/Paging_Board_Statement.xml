@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.min.edu.model.AnswerboardDaoImpl">
+   
+   <select id="selectAllBoard" resultType="AnswerboardDto"
+         parameterType="java.util.Map">
+      SELECT SEQ , ID , TITLE ,
+            CONTENT , "REF" , STEP ,
+            "DEPTH" , REGDATE , DELFLAG 
+         FROM(
+            SELECT ROW_NUMBER() OVER(ORDER BY REF DESC , STEP) RN ,
+                  SEQ , ID , TITLE ,
+                  CONTENT , "REF" , STEP ,
+                  "DEPTH" , TO_CHAR(REGDATE, 'YYYY-MM-DD hh:mm:ss') REGDATE , DELFLAG 
+               FROM ANSWERBOARD a 
+         )
+         WHERE RN BETWEEN #{first} AND #{last}
+   </select>
+   
+   <select id="countMyBoard" resultType="java.lang.Integer">
+      SELECT COUNT(*)
+         FROM ANSWERBOARD a 
+   </select>
+
+</mapper>
