@@ -51,10 +51,10 @@ public class FileBoardWrite extends HttpServlet {
 		// 1)절대경로
 		// 화면에 한번 깜빡이고 보여짐/ 새로고침한번..
 		// - tomcat(가상)의 물리적인 위치
-		String saveDirectory = "C:\\Programming_IDE\\eclipse_WEB\\workspace_web\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\web017_commons_fileupload_ver01\\upload";
+		//String saveDirectory = "C:\\Programming_IDE\\eclipse_WEB\\workspace_web\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\web017_commons_fileupload_ver01\\upload";
 		
-		// - 배포 전의 폴더
-		//String saveDirectory = "C:\\Programming_IDE\\eclipse_WEB\\workspace_web\\web017_commons_fileupload_ver01\\src\\main\\webapp\\upload";
+		// - 배포 전의 폴더(이클립스의 폴더)
+		String saveDirectory = "C:\\Programming_IDE\\eclipse_WEB\\workspace_web\\web017_commons_fileupload_ver01\\src\\main\\webapp\\upload";
 		
 		// 2)상태경로(context)
 		// 바로 보여짐
@@ -153,7 +153,7 @@ public class FileBoardWrite extends HttpServlet {
 			boolean isc = dao.insertBoard(bVo, fileVos);
 
 			if (isc) {
-				resp.sendRedirect("./fileBoardList.do");
+				resp.sendRedirect("./fileBoardDetail.do?seq="+bVo.getSeq());
 			}
 
 		} catch (FileUploadException e) {

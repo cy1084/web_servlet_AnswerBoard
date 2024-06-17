@@ -34,6 +34,8 @@
 				<c:choose>
 				<c:when test="${fn:length(dto.filevo)>0}">
 					<c:forEach var="file" items="${dto.filevo}">
+						<img src="./upload/${file.stored_fname}">
+						${file},
 						${file.origin_fname}
 						<button onclick="location.href='./fileDownload.do?seq=${file.f_seq}'">다운로드</button><br>
 					</c:forEach>

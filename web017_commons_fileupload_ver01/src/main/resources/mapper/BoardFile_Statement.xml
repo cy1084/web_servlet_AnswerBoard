@@ -69,7 +69,7 @@
 	<select id="getBoard" parameterType="java.lang.String"
 		resultMap="BoardVoMap">
 		SELECT SEQ, ID, WRITER, TITLE, CONTENT, REGDATE,
-		ORIGIN_FNAME
+		ORIGIN_FNAME, F_SEQ, STORED_FNAME
 		FROM ANSWERBOARD a LEFT JOIN FILEBOARD f
 		ON a.SEQ = f.B_SEQ
 		WHERE SEQ = #{seq}

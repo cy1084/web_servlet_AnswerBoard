@@ -31,6 +31,15 @@
 		<url-pattern>/fileBoardDetail.do</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>FileDownload</servlet-name>
+		<servlet-class>com.min.edu.controller.FileDownload</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FileDownload</servlet-name>
+		<url-pattern>/fileDownload.do</url-pattern>
+	</servlet-mapping>
+	
 	
 
 </web-app>
