@@ -28,43 +28,52 @@
 			<!-- 앞에 상황에 따른 이미지 -->
 			<!-- 페이지 번호 -->
 			<!-- 앞에 상황에 따른 이미지 -->
-			
-			<ul class="pagination pagination-lg">
-			<c:if test="${page.page>page.countPage}">
-				<li>
-					<a href="./boardPage.do?page=1">&lt;&lt;</a>
-				</li>
-			</c:if>
-			<c:if test="${page.page>1}">
-				<li>
-					<a href="./boardPage.do?page=${page.stagePage-page.countPage}">&lt;</a>
-				</li>
-			</c:if>
 
-			
+			<ul class="pagination pagination-lg">
+				<c:if test="${page.page>page.countPage}">
+					<li><a href="./boardPage.do?page=1">&lt;&lt;</a></li>
+				</c:if>
+				<fmt:parseNumber var="num1" integerOnly="true"
+					value="${(page.totalPage-1) / page.countPage}" />
+				<fmt:parseNumber var="num2" integerOnly="true"
+					value="${(page.page-1) / page.countPage}" />
+
+				<c:if test="${page.page>1}">
+					<c:choose>
+						<c:when test="${(page.stagePage-page.countPage)<0}">
+							<li><a href="./boardPage.do?page=1">&it;</a></li>
+						</c:when>
+					</c:choose>
+
+					<li><a
+						href="./boardPage.do?page=${page.stagePage-page.countPage}">&lt;</a>
+					</li>
+				</c:if>
+
+
 				<c:forEach var="i" begin="${page.stagePage}" end="${page.endPage}"
 					step="1">
-					<li ${i==page.page?"class='active'":""}>
-						<a href="./boardPage.do?page=${i}">${i}</a>
-					</li>
+					<li ${i==page.page?"class='active'":""}><a
+						href="./boardPage.do?page=${i}">${i}</a></li>
 				</c:forEach>
-				
-				<fmt:parseNumber var="num1" integerOnly="true" value="${(page.totalPage-1) / page.countPage}" />
-				<fmt:parseNumber var="num2" integerOnly="true" value="${(page.page-1) / page.countPage}" />
-				
+
+				<fmt:parseNumber var="num1" integerOnly="true"
+					value="${(page.totalPage-1) / page.countPage}" />
+				<fmt:parseNumber var="num2" integerOnly="true"
+					value="${(page.page-1) / page.countPage}" />
+
 				<c:if test="${num1>num2}">
-					<li>
-						<a href="./boardPage.do?page=${page.stagePage+page.countPage}">&gt;</a>
+					<li><a
+						href="./boardPage.do?page=${page.stagePage+page.countPage}">&gt;</a>
 					</li>
 				</c:if>
 				<c:if test="${page.endPage<page.totalPage}">
-					<li>
-						<a href="./boardPage.do?page=${page.totalPage}">&gt;&gt;</a>
+					<li><a href="./boardPage.do?page=${page.totalPage}">&gt;&gt;</a>
 					</li>
 				</c:if>
-				
-				
-				
+
+
+
 			</ul>
 		</div>
 

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.min.edu.model.BoardFileImpl">
+	<resultMap type="com.min.edu.vo.BoardVo" id="BoardVoMap">
+		<result column="SEQ" property="seq" />
+		<result column="ID" property="id" />
+		<result column="TITLE" property="title" />
+		<result column="CONTENT" property="content" />
+		<result column="REGDATE" property="regdate" />
+
+		<!-- 조인 -->
+		<collection property="filevo" resultMap="FileVoMap" />
+		<!-- BoardVo의 private List<FileBoardVo> filevo 변수명과 property 이름 같게! -->
+	</resultMap>
+
+	<!-- 전체 글 조회 -->
+	<select id="getAllList" resultType="com.min.edu.vo.BoardVo">
+		<![CDATA[
+		SELECT SEQ,ID,TITLE||'('|| CNT||')', TITLE, CONTENT,REGDATE
+		FROM (SELECT SEQ,ID,TITLE,(SELECT COUNT(*) FROM FILEBOARD f
+						WHERE a.SEQ=f.B_SEQ) CNT, CONTENT, REGDATE
+					,ROW_NUMBER() OVER(ORDER BY REF DESC, STEP ASC) RN
+ 		FROM ANSWERBOARD a)
+ 		WHERE RN<11]]>
+	</select>
+
+	<!-- 글 입력 -->
+	<insert id="insertBoard" parameterType="com.min.edu.vo.BoardVo">
+		<selectKey keyProperty="seq" resultType="java.lang.Integer"
+			order="BEFORE">
+			SELECT ANSWERBOARD_SEQ.NEXTVAL AS SEQ FROM DUAL
+		</selectKey>
+
+		INSERT INTO ANSWERBOARD(SEQ,ID,TITLE,CONTENT,REF,STEP,DEPTH,REGDATE)
+		VALUES(#{seq},#{id},#{title},#{content},
+		(SELECT MAX(REF) FROM
+		ANSWERBOARD)+1,0,0,SYSDATE)
+	</insert>
+
+	<!-- 파일 여러개 올릴 수 있는 일대다 파일 입력 -->
+	<!-- 잘 기억하기! -->
+	<insert id="insertFile" parameterType="java.util.Map">
+		<selectKey keyProperty="f_seq"
+			resultType="java.lang.Integer" order="BEFORE">
+			SELECT NVL(MAX(F_SEQ),0)+1 AS F_SEQ FROM FILEBOARD
+		</selectKey>
+		INSERT INTO FILEBOARD (F_SEQ, B_SEQ, WRITER, ORIGIN_FNAME,
+		STORED_FNAME, FILE_SIZE, F_REGDATE, F_DELFLAG)
+		<foreach collection="fdtos" item="fdto" index="idx"
+			separator=" UNION ALL ">
+			<!-- UNION ALL 앞 뒤로 한칸씩 띄기 -->
+			SELECT #{f_seq}+#{idx}, #{b_seq}, #{fdto.writer},
+			#{fdto.origin_fname}, #{fdto.stored_fname}, #{fdto.file_size},
+			SYSDATE,'N' FROM DUAL
+		</foreach>
+	</insert>
+
+	<!-- 파일 가져오기 -->
+	<select id="getFile" parameterType="java.lang.String"
+		resultMap="FileVoMap">
+		<!-- resultMap 대신 resultType=com.min.edu.vo.FileBoardVo 로 써도 됨 -->
+		SELECT F_SEQ, B_SEQ, WRITER, ORIGIN_FNAME, STORED_FNAME, FILE_SIZE,
+		F_REGDATE, F_DELFLAG
+		FROM FILEBOARD
+		WHERE F_SEQ=#{seq}
+	</select>
+
+	<!-- 글 조회 -->
+	<select id="getBoard" parameterType="java.lang.String"
+		resultMap="BoardVoMap">
+		SELECT SEQ, ID, WRITER, TITLE, CONTENT, REGDATE,
+		ORIGIN_FNAME
+		FROM ANSWERBOARD a LEFT JOIN FILEBOARD f
+		ON a.SEQ = f.B_SEQ
+		WHERE SEQ = #{seq}
+	</select>
+
+
+	<resultMap type="com.min.edu.vo.FileBoardVo" id="FileVoMap">
+		<result column="F_SEQ" property="f_seq" />
+		<result column="B_SEQ" property="b_seq" />
+		<result column="WRITER" property="writer" />
+		<result column="ORIGIN_FNAME" property="origin_fname" />
+		<result column="STORED_FNAME" property="stored_fname" />
+		<result column="FILE_SIZE" property="file_size" />
+		<result column="F_REGDATE" property="f_regdate" />
+		<result column="F_DELFLAG" property="f_delflag" />
+	</resultMap>
+</mapper>
